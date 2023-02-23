@@ -24,7 +24,7 @@ public class IntStackTest {
 
     @Test
     public void testFullStackIsFull(){
-        for (int i = 0; i < stack.getCapacity() - 1; i++) {
+        for (int i = 0; i < stack.getCapacity(); i++) {
             stack.push(1);
         }
         assertTrue(stack.isFull());
@@ -32,7 +32,7 @@ public class IntStackTest {
 
     @Test
     public void testAlmostFull(){
-        for (int i = 0; i < stack.getCapacity() - 2; i++) {
+        for (int i = 0; i < stack.getCapacity() - 1; i++) {
             stack.push(1);
         }
         assertFalse(stack.isFull());
@@ -42,7 +42,7 @@ public class IntStackTest {
     public void testPopReturnsPushedValue(){
         Random random = new Random();
         int[] pushedValues = new int[stack.getCapacity()];
-        for (int i = 0; i < stack.getCapacity() - 1; i++) {
+        for (int i = 0; i < stack.getCapacity(); i++) {
             int value = random.nextInt(200);
             stack.push(value);
             pushedValues[i] = value;
