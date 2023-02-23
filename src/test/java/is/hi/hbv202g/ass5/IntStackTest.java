@@ -1,5 +1,6 @@
 package is.hi.hbv202g.ass5;
 
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -7,11 +8,20 @@ import org.junit.Test;
 
 public class IntStackTest {
 
-    @Test
+    IntStack stack;
+
+    @Before
     public void testNewStackIsNotFull() {
-        IntStack stack= new IntStack();
+        stack= new IntStack();
 
         assertFalse(stack.isFull());
+    }
+
+    public void testFullStackIsFull(){
+        for (int i = 0; i < stack.getCapacity(); i++) {
+            stack.push(1);
+        }
+        assertTrue(stack.isFull());
     }
 
 }
